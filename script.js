@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 
 	function loadDuties() {
-		fetch("http://localhost:3000/duties")
+		fetch("https://fake-server-json-noid.onrender.com/duties")
 			.then((response) => response.json())
 			.then((duties) => {
 				tbody.innerHTML = "";
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	function handleEdit(event) {
 		const id = event.target.getAttribute("data-id");
-		fetch(`http://localhost:3000/duties/${id}`)
+		fetch(`https://fake-server-json-noid.onrender.com/duties/${id}`)
 			.then((response) => response.json())
 			.then((duty) => {
 				document.getElementById("username").value = duty.username;
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	function handleDelete(event) {
 		const id = event.target.getAttribute("data-id");
-		fetch(`http://localhost:3000/duties/${id}`, {
+		fetch(`https://fake-server-json-noid.onrender.com/duties/${id}`, {
 			method: "DELETE",
 		}).then(() => loadDuties());
 	}
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			dutyType: dutyType,
 		};
 
-		fetch("http://localhost:3000/duties", {
+		fetch("https://fake-server-json-noid.onrender.com/duties", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			dutyType: dutyType,
 		};
 
-		fetch(`http://localhost:3000/duties/${id}`, {
+		fetch(`https://fake-server-json-noid.onrender.com/duties/${id}`, {
 			method: "PUT",
 			headers: {
 				"Content-Type": "application/json",
