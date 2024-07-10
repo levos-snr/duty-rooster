@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duty Rooster</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Welcome Rooster</h1>
+
+    <form id="dutyForm">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" placeholder="username" required>
+
+        <label for="cleaningTime">Cleaning Time</label>
+        <input type="time" name="cleaningTime" id="cleaningTime" required>
+
+        <label for="dutyDate">Duty Date</label>
+        <input type="date" name="dutyDate" id="dutyDate" required>
+
+        <label for="dutyType">Duty Type</label>
+        <select name="dutyType" id="dutyType" required>
+            <option value="cleaning">Cleaning</option>
+            <option value="cooking">Cooking</option>
+            <option value="shopping">Shopping</option>
+        </select>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Cleaning Time</th>
+                <th>Duty Date</th>
+                <th>Duty Type</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="duties">
+            <!-- Duties will be dynamically inserted -->
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
